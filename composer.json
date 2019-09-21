@@ -1,0 +1,15 @@
+{
+  "name": "tasoft/javascript-template",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thomas Abplanalp",
+      "email": "info@tasoft.ch"
+    }
+  ],
+  "scripts": {
+    "post-create-project-cmd": [
+      "npm i"
+    ]
+  }
+}
