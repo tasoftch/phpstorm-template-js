@@ -1,5 +1,6 @@
 {
   "name": "tasoft/phpstorm-template-js",
+  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
