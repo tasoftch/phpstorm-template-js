@@ -20,12 +20,10 @@
  * SOFTWARE.
  */
 
-import $ from 'jquery';
+((IK)=>{
+    if(!IK)
+        IK = window.Ikarus = {};
+    Object.assign(IK, {
 
-module.exports = (() => {
-    // Your code
-})();
-
-export default (() => {
-    // Your code
-})();
+    })
+})(window.Ikarus);

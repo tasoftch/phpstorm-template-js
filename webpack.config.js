@@ -21,32 +21,16 @@
  */
 
 const pkg = require('./package.json');
-const webpack = require('webpack');
 const name = pkg.name;
-let plugins = [];
 
-module.exports = (env = {}) => {
-    if (env.production) {
-        plugins = [
-            new webpack.optimize.UglifyJsPlugin({ minimize: true, compressor: { warnings: false }}),
-            new webpack.BannerPlugin(`${name} - ${pkg.version}`),
-        ]
-    }
+const path = require('path')
 
-    return {
-        entry: './src',
-        output: {
-            filename: `./Components/js/${name}.min.js`,
-            library: name,
-            libraryTarget: 'umd',
-        },
-        module: {
-            loaders: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                include: /src/,
-            }],
-        },
-        plugins: plugins,
-    };
-};
+module.exports = {
+    entry: {
+        main: path.resolve(__dirname, './src/index.js'),
+    },
+    output: {
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].bundle.js',
+    },
+}
